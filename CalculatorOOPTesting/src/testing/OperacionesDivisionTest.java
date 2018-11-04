@@ -7,15 +7,14 @@ import java.io.PrintStream;
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
-import com.hcl.javaSeBasic.training.operations.Multiplication;
+import com.hcl.javaSeBasic.training.operations.Divition;
 
-public class OperacionesMultiplicacionesTest {
-	
-	private Multiplication operation;
+public class OperacionesDivisionTest {
+
+	private Divition operation;
 
 	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 	private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
@@ -24,7 +23,7 @@ public class OperacionesMultiplicacionesTest {
 
 	@Before
 	public void setUpStreams() {
-		operation = new Multiplication();
+		operation = new Divition();
 		
 		System.setOut(new PrintStream(outContent));
 		System.setErr(new PrintStream(errContent));
@@ -42,41 +41,53 @@ public class OperacionesMultiplicacionesTest {
 	//Test de la clase Multiplication
 	@Test
 	@Category(CalculatorGoodTestCategory.class)
-	public void Multiplicacion2numerosEnterosTest() {
+	public void Division2numerosEnterosTest() {
 		double num1 = 10;
 		double num2 = 5;
 		
 		operation.performOperation(num1, num2);
-		String exp = "The resoult by multiplying "+num1 +" * "+ num2 + " = "+(num1*num2)+"\r\n";
+		String exp = "The resoult by dividing "+num1 +" / "+ num2 + " = "+(num1/num2)+"\r\n";
 		assertEquals(exp, outContent.toString());
 	}
 	@Test
-	public void Multiplicacion2NumerosDoubleTest(){
+	public void Division2NumerosDoubleTest(){
 		double num1 = 10.45;
 		double num2 = 5.32;
 		
 		operation.performOperation(num1, num2);
-		String exp = "The resoult by multiplying "+num1 +" * "+ num2 + " = "+(num1*num2)+"\r\n";
+		String exp = "The resoult by dividing "+num1 +" / "+ num2 + " = "+(num1/num2)+"\r\n";
 		assertEquals(exp, outContent.toString());
 	}
 	
 	
 	@Test//(expected = Exception.class)
-	public void Multiplicacion2NumerosNegativosTest(){
+	public void Division2NumerosNegativosTest(){
 		double num1 = -10;
 		double num2 = -5;
 		
 		operation.performOperation(num1, num2);
-		String exp = "The resoult by multiplying "+num1 +" * "+ num2 + " = "+(num1*num2)+"\r\n";
+		String exp = "The resoult by dividing "+num1 +" / "+ num2 + " = "+(num1/num2)+"\r\n";
+		assertEquals(exp, outContent.toString());
+		
+	}
+	
+	@Test
+	public void DivisionNumeroTest() {
+		double num1 = 5;
+		double num2 = 0;
+		
+		operation.performOperation(num1, num2);
+		String exp = "The resoult by dividing "+num1 +" / "+ num2 + " = "+(num1/num2)+"\r\n";
 		assertEquals(exp, outContent.toString());
 		
 	}
 	
 	@Test
 	@Category(CalculatorBadTestCategory.class)
-	public void MultiplicacionConLetrasYnumerosTest(){
+	public void DivisionConLetrasYnumerosTest(){
 		
 		fail("not yet implemented");
 		
 	}
+
 }
