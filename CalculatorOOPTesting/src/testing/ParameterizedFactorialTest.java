@@ -1,4 +1,4 @@
-package com.hcl.test.parametrizados;
+package testing;
 
 import static org.junit.Assert.*;
 
