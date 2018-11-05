@@ -76,7 +76,12 @@ public class OperacionesMultiplicacionesTest {
 	@Category(CalculatorBadTestCategory.class)
 	public void MultiplicacionConLetrasYnumerosTest(){
 		
-		fail("not yet implemented");
+		double num1 = 10;
+		String num2 = "a";
+		
+		operation.performOperation(num1, num2);
+		String exp = "The resoult by multiplying "+num1 +" * "+ num2 + " = "+(num1*num2)+"\r\n";
+		assertEquals(exp, outContent.toString());
 		
 	}
 }
