@@ -86,7 +86,12 @@ public class OperacionesDivisionTest {
 	@Category(CalculatorBadTestCategory.class)
 	public void DivisionConLetrasYnumerosTest(){
 		
-		fail("not yet implemented");
+		double num1 = 5;
+		String num2 = "a";
+		
+		operation.performOperation(num1, num2);
+		String exp = "The resoult by dividing "+num1 +" / "+ num2 + " = "+(num1/num2)+"\r\n";
+		assertEquals(exp, outContent.toString());
 		
 	}
 
