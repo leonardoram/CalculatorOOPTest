@@ -1,14 +1,13 @@
 package testing;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.jupiter.api.Assertions.*;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.Collection;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
@@ -47,7 +46,7 @@ class ParameterizedFactorial {
 			RecursiveFactorial rf = (RecursiveFactorial) c.newInstance();
 			Method m =(Method) c.getDeclaredMethod("calculateFactorial", Integer.class);
 			m.setAccessible(true);
-			int result= (int)m.invoke(rf, Input);
+			int result= (Integer) m.invoke(rf, Input);
 			assertEquals(Expected, result);
 		
 		

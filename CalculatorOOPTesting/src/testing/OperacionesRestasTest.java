@@ -74,10 +74,13 @@ public class OperacionesRestasTest {
 		@Category(CalculatorBadTestCategory.class)
 		public void RestaNumerosYLetrasTest() {
 			double num1 = (-15);
-			String num2 = "a";
-		
+			double num2 = 5;
+			
+			Double numerito = num2;
+			numerito.toString();
+			
 		operation.performOperation(num1, num2);
-		String exp = "The resoult by substracting "+num1 +" - "+ num2 + " = "+(num1-num2)+"\r\n";
+		String exp = "The resoult by substracting "+num1 +" - "+ num2 + " = "+(num1-numerito)+"\r\n";
 		assertEquals(exp, outContent.toString());
 		}
 
