@@ -77,7 +77,7 @@ public class OperacionesRestasTest {
 			String num2 = "a";
 		
 		operation.performOperation(num1, num2);
-		String exp = "The resoult by adding "+num1 +" + "+ num2 + " = "+(num1+num2)+"\r\n";
+		String exp = "The resoult by substracting "+num1 +" - "+ num2 + " = "+(num1-num2)+"\r\n";
 		assertEquals(exp, outContent.toString());
 		}
 
