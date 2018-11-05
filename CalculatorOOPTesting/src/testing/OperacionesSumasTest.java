@@ -119,7 +119,12 @@ public class OperacionesSumasTest {
 	@Category(CalculatorBadTestCategory.class)
 	public void SumarNumerosYletrasTest() {
 		
-		fail("aun no implementada");
+		double num1 = (-15);
+		String num2 = "a";
+		
+		operation.performOperation(num1, num2);
+		String exp = "The resoult by adding "+num1 +" + "+ num2 + " = "+(num1+num2)+"\r\n";
+		assertEquals(exp, outContent.toString());
 		
 	}
 	
