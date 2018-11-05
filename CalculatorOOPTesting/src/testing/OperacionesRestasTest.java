@@ -73,7 +73,12 @@ public class OperacionesRestasTest {
 		@Test
 		@Category(CalculatorBadTestCategory.class)
 		public void RestaNumerosYLetrasTest() {
-			fail("not yet implemented");
+			double num1 = (-15);
+			String num2 = "a";
+		
+		operation.performOperation(num1, num2);
+		String exp = "The resoult by adding "+num1 +" + "+ num2 + " = "+(num1+num2)+"\r\n";
+		assertEquals(exp, outContent.toString());
 		}
 
 }
